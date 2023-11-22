@@ -1,4 +1,15 @@
 package com.mat.crudSpringBoot.model;
 
-public record ProductsDto(String name, Float price_in_cents) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
+import java.util.UUID;
+
+public record ProductsDto(
+        String id,
+        @NotBlank
+        String name,
+        @NotNull
+        Float price
+) {
 }
