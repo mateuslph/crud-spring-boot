@@ -11,15 +11,12 @@ import org.springframework.web.bind.annotation.*;
 public class ProductsController {
 
     @Autowired
-    ProductsRepository productsRepository;
+    private ProductsRepository productsRepository;
 
     @GetMapping
     public ResponseEntity getAllProducts() {
-        return ResponseEntity.ok("Deu ok");
+        var allProducts = productsRepository.findAll();
+        return ResponseEntity.ok(allProducts);
     }
 
-    @PostMapping("/register")
-    public void cadastrar(@RequestBody Products dados) {
-        productsRepository.save(dados);
-    }
 }

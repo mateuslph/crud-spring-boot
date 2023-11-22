@@ -2,7 +2,7 @@ package com.mat.crudSpringBoot.model;
 
 import jakarta.persistence.*;
 
-@Entity
+@Entity(name="products")
 @Table(name="products")
 public class Products {
 
