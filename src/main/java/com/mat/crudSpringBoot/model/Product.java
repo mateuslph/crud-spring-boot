@@ -3,7 +3,6 @@ package com.mat.crudSpringBoot.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.UUID;
 @Table(name="products")
 @Entity(name="products")
 @Getter
@@ -11,17 +10,19 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Products {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
     private String name;
     private Float price;
+    private Boolean active;
 
-    public Products(ProductsDto productsDto) {
-        this.name = productsDto.name();
-        this.price = productsDto.price();
+    public Product(ProductDto productDto) {
+        this.name = productDto.name();
+        this.price = productDto.price();
+        this.active = true;
     }
 
 }
