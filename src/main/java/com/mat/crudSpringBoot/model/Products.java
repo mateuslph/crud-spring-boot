@@ -4,7 +4,6 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.UUID;
-
 @Table(name="products")
 @Entity(name="products")
 @Getter
